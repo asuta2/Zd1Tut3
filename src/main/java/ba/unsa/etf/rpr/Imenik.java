@@ -28,10 +28,21 @@ public class Imenik {
         return null;
     }
     public Set<String> izGrada(Grad g){
-        return null;
+        Set<String> zaIspisati = null;
+        int broj= Integer.parseInt(g.imeGrada());
+        for(HashMap.Entry<Integer, String> temp: Book.entrySet())
+        {
+            String owo="0" + Integer.toString(temp.getKey()).substring(0,2);
+            if(owo.equals(g.imeGrada()))
+            {
+                zaIspisati.add(temp.getValue());
+            }
+        }
+        return zaIspisati;
     }
     public Set<TelefonskiBroj> izGradaBrojevi(Grad g){
         return null;
     }
+
 
 }

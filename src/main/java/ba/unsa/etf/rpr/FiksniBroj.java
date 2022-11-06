@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr;
 
-public class FiksniBroj extends TelefonskiBroj{
+public class FiksniBroj extends TelefonskiBroj implements Comparable<TelefonskiBroj>{
     private Grad g;
     private String br;
     public FiksniBroj(Grad grad, String broj){
@@ -15,5 +15,9 @@ public class FiksniBroj extends TelefonskiBroj{
     @Override
     public int hashCode() {
         return Integer.parseInt(g.imeGrada() + this.br);
+    }
+    @Override
+    public int compareTo(TelefonskiBroj o) {
+        return this.ispisi().length()-o.ispisi().length();
     }
 }
